@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="320" viewBox="0 0 420 320" role="img" aria-label="Sportswear product placeholder image">
+  <rect width="420" height="320" fill="#f0f7f0" />
+  <rect x="12" y="12" width="396" height="296" rx="24" fill="#fff" stroke="#b7c9b8" stroke-width="2" />
+  <text x="210" y="150" fill="#24392d" font-family="Inter, sans-serif" font-size="30" font-weight="700" text-anchor="middle">SPORTSWEAR</text>
+  <text x="210" y="190" fill="#677065" font-family="Inter, sans-serif" font-size="18" text-anchor="middle">Product image</text>
+</svg>

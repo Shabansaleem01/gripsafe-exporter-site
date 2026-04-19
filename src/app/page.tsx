@@ -1,30 +1,33 @@
 import Link from "next/link";
 import { products } from "@/data/products";
+import ImageWithFallback from "@/components/ImageWithFallback";
+import { getCategoryPlaceholder, getProductImage } from "@/lib/categoryImages";
+import { getProductLabel } from "@/lib/productUtils";
 
 const productCategories = [
   {
-    title: "Boxing Gloves & Mitts",
-    detail: "Pro sparring gloves, mitts, and protective boxing accessories.",
+    title: "Boxing Equipment",
+    detail: "Professional boxing gloves, mitts, headguards, and training gear.",
   },
   {
-    title: "Sports Uniforms & Team Kits",
-    detail: "Soccer, baseball, basketball, and football custom uniforms.",
-  },
-  {
-    title: "Streetwear & Hoodies",
-    detail: "Private-label hoodies, jackets, joggers, and casual apparel.",
-  },
-  {
-    title: "Safety & Workwear",
-    detail: "Durable industrial garments and utility work apparel.",
+    title: "Streetwear",
+    detail: "Urban fashion including hoodies, jackets, and casual apparel.",
   },
   {
     title: "Motorbike Gear",
-    detail: "Racing suits, gloves, and riding gear built for protection.",
+    detail: "Racing suits, gloves, boots, and protective riding gear.",
   },
   {
-    title: "Custom Private Label Apparel",
-    detail: "From concept to packaging for your branded collections.",
+    title: "Sportswear",
+    detail: "Athletic uniforms, jerseys, shorts, and performance wear.",
+  },
+  {
+    title: "Leather Products",
+    detail: "Premium leather jackets, pants, and fashion accessories.",
+  },
+  {
+    title: "Labels and Packaging",
+    detail: "Custom labels, tags, and packaging solutions for your brand.",
   },
 ];
 
@@ -159,22 +162,24 @@ export default function Home() {
             <h2>Top Products on Homepage</h2>
           </div>
           <Link href="/products" className="text-link">
-            Browse all 42 products
+            Browse all products
           </Link>
         </div>
         <div className="home-products-grid">
           {homeProducts.map((item) => (
-            <article key={item.name} className="featured-card">
-              <img src={item.image} alt={item.name} loading="lazy" className="featured-image" />
+            <article key={item.alibabaLink} className="featured-card">
+              <ImageWithFallback
+                src={getProductImage(item.image, item.category)}
+                alt={item.name}
+                className="featured-image"
+                fallbackSrc={getCategoryPlaceholder(item.category)}
+              />
               <p className="product-category">{item.category}</p>
-              <h3>{item.name}</h3>
+              <h3>{getProductLabel(item.name, item.alibabaLink)}</h3>
               <p>{item.detail}</p>
               <div className="product-card-actions">
                 <a href={item.alibabaLink} target="_blank" rel="noreferrer" className="btn btn-outline">
                   View on Alibaba
-                </a>
-                <a href="https://wa.me/message/UBP7SOCOZDFFH1" target="_blank" rel="noreferrer" className="btn btn-small">
-                  Inquire Now
                 </a>
               </div>
             </article>

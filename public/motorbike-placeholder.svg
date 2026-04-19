@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="320" viewBox="0 0 420 320" role="img" aria-label="Motorbike product placeholder image">
+  <rect width="420" height="320" fill="#eef4eb" />
+  <rect x="12" y="12" width="396" height="296" rx="24" fill="#fff" stroke="#b7c8b1" stroke-width="2" />
+  <text x="210" y="150" fill="#2d3e33" font-family="Inter, sans-serif" font-size="30" font-weight="700" text-anchor="middle">MOTORBIKE</text>
+  <text x="210" y="190" fill="#6b706b" font-family="Inter, sans-serif" font-size="18" text-anchor="middle">Product image</text>
+</svg>
